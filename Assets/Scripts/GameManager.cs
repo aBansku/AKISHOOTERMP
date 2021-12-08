@@ -22,10 +22,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
-    public void getMap()
+    public string getMap()
     {
         mScene = SceneManager.GetActiveScene();
         map = mScene.name;
+        return map;
     }
 
 }
