@@ -56,10 +56,10 @@ public class Gun : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
 
-            Enemy enemy = hit.transform.GetComponent<Enemy>();
-            if (enemy != null)
+            Player player = hit.transform.GetComponent<Player>();
+            if (player != null)
             {
-                enemy.TakeDamage(damage);
+                player.takeDamage(damage);
             }
         }
     }

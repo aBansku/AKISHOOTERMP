@@ -8,6 +8,10 @@ public class Map : MonoBehaviour
     public float[] spawnPoints;
 
     // Start is called before the first frame update
+    public Map()
+    {
+        
+    }
     void Start()
     {
 
