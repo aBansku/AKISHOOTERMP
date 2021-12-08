@@ -52,8 +52,6 @@ public class Gun : MonoBehaviour
     {
         muzzlerFlash.Play();
         RaycastHit hit;
-        GameManager ok = new GameManager();
-        ok.getMap();
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
         {
             Debug.Log(hit.transform.name);

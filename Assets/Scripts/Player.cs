@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public void takeDamage(float damage)
     {
         hp -= damage;
-        if (hp == 0f)
+        if (hp <= 0f)
         {
 
         }
