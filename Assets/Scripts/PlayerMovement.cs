@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -25,15 +25,11 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * x * speed + transform.forward * z * speed;
-
-        transform.position += move * Time.deltaTime;
-
+        //transform.position += move * Time.deltaTime;
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
 
             speed += bhopSpeed;
-
             isGrounded = false;
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
 
@@ -44,6 +40,18 @@ public class PlayerMovement : MonoBehaviour
         // {
         //    FindObjectOfType<GameManager>().EndGame();
         // }
+    }
+
+    private void stopMovement()
+    {
+        rb.isKinematic = true;
+    }
+
+    private void movement(float x, float z)
+    {
+        Vector3 move = transform.right * x * speed + transform.forward * z * speed;
+        rb.AddForce(move);
+        stopMovement();
     }
 
 }
